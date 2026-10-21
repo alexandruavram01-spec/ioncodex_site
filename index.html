@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IONCODEX · Android and iOS apps</title>
+  <meta name="description" content="IONCODEX LTD is a UK software studio designing and building Android and iOS apps, with privacy built in.">
+  <meta name="theme-color" content="#0f1224">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --surface: #ffffff;
+      --ink: #14162b;
+      --muted: #5b5f7a;
+      --line: #e3e4ef;
+      --accent: #4f46e5;
+      --accent-2: #0ea5a4;
+      --hero-ink: #ffffff;
+      --hero-muted: #c9cbe8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0d1c;
+        --surface: #14172c;
+        --ink: #eceefb;
+        --muted: #a3a7c7;
+        --line: #252946;
+        --accent: #8b85ff;
+        --accent-2: #3dd6cf;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+    /* Header */
+    header.top {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(15, 18, 36, 0.86);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+    }
+    header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; letter-spacing: 3px; font-size: 15px; }
+    .brand svg { width: 30px; height: 30px; }
+    nav.links a { color: #d6d8f3; text-decoration: none; margin-left: 22px; font-size: 15px; }
+    nav.links a:hover { color: #fff; }
+    @media (max-width: 560px) { nav.links a { margin-left: 14px; font-size: 14px; } nav.links a.hide-sm { display: none; } }
+
+    /* Hero */
+    .hero {
+      background:
+        radial-gradient(900px 420px at 85% -10%, rgba(79, 70, 229, 0.55), transparent 60%),
+        radial-gradient(700px 380px at 0% 110%, rgba(14, 165, 164, 0.35), transparent 60%),
+        #0f1224;
+      color: var(--hero-ink);
+      padding: 96px 0 104px;
+    }
+    .eyebrow { color: var(--hero-muted); letter-spacing: 2px; text-transform: uppercase; font-size: 13px; font-weight: 600; margin: 0 0 14px; }
+    .hero h1 { font-size: clamp(34px, 6vw, 58px); line-height: 1.08; margin: 0 0 18px; max-width: 820px; letter-spacing: -0.5px; }
+    .hero h1 span { background: linear-gradient(90deg, #a5a1ff, #5eead4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p.lead { color: var(--hero-muted); font-size: 19px; max-width: 640px; margin: 0 0 32px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-block; padding: 13px 22px; border-radius: 12px; font-weight: 600; text-decoration: none; font-size: 16px; }
+    .btn.primary { background: #ffffff; color: #14162b; }
+    .btn.ghost { color: #fff; border: 1px solid rgba(255, 255, 255, 0.35); }
+    .btn:hover { transform: translateY(-1px); }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    section h2 { font-size: clamp(26px, 4vw, 36px); margin: 0 0 10px; letter-spacing: -0.3px; }
+    section p.intro { color: var(--muted); max-width: 640px; margin: 0 0 36px; }
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 26px;
+    }
+    .card h3 { margin: 14px 0 6px; font-size: 19px; }
+    .card p { margin: 0; color: var(--muted); font-size: 16px; }
+    .icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+    }
+    .icon svg { width: 22px; height: 22px; }
+
+    /* App showcase */
+    .app {
+      display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 32px;
+    }
+    @media (max-width: 720px) { .app { grid-template-columns: 1fr; text-align: left; } }
+    .app .art {
+      background: #fff7f2; border-radius: 28px; aspect-ratio: 1 / 1;
+      display: grid; place-items: center; padding: 18px;
+    }
+    .app .art img { width: 100%; height: auto; }
+    .app h3 { font-size: 26px; margin: 0 0 6px; font-family: Georgia, "Times New Roman", serif; color: #c2486a; }
+    @media (prefers-color-scheme: dark) { .app h3 { color: #f2b8c6; } }
+    .app p { color: var(--muted); margin: 0 0 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; padding: 0; list-style: none; }
+    .tags li { font-size: 13px; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+    .status { font-size: 14px; color: var(--muted); }
+
+    /* About + contact */
+    .two { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
+    @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+    .contact-card { background: #0f1224; color: #fff; border-radius: 22px; padding: 30px; }
+    .contact-card p { color: var(--hero-muted); margin: 0 0 18px; }
+    .contact-card a.mail { color: #fff; font-size: 20px; font-weight: 600; text-decoration: none; border-bottom: 2px solid #5eead4; }
+    .contact-card address { font-style: normal; color: var(--hero-muted); margin-top: 22px; font-size: 15px; }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="IONCODEX home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a5a1ff"/><stop offset="1" stop-color="#5eead4"/></linearGradient></defs>
+          <ellipse cx="16" cy="16" rx="14" ry="6.5" fill="none" stroke="url(#g)" stroke-width="2" transform="rotate(-30 16 16)"/>
+          <ellipse cx="16" cy="16" rx="14" ry="6.5" fill="none" stroke="url(#g)" stroke-width="2" transform="rotate(30 16 16)" opacity=".55"/>
+          <circle cx="16" cy="16" r="3.6" fill="url(#g)"/>
+        </svg>
+        IONCODEX
+      </a>
+      <nav class="links" aria-label="Main">
+        <a href="#work" class="hide-sm">What we do</a>
+        <a href="#apps">Apps</a>
+        <a href="#about" class="hide-sm">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Software studio · United Kingdom</p>
+        <h1>We build thoughtful apps for <span>Android and iOS</span>.</h1>
+        <p class="lead">IONCODEX designs, builds and publishes mobile apps that people enjoy using every day, with their privacy built in from the first line of code.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn ghost" href="#apps">See our apps</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="work">
+      <div class="wrap">
+        <h2>What we do</h2>
+        <p class="intro">From the first sketch to the App Store and Google Play, we take care of the whole journey.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+            <h3>Android and iOS apps</h3>
+            <p>One codebase built with Flutter, so your app looks and feels at home on both platforms, and new features reach everyone at the same time.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>Privacy by design</h3>
+            <p>Personal data stays on the user's device wherever possible, and anything shared is kept to the minimum, in line with UK GDPR.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l6-6"/><path d="M14 4l6 6-8 8-6-6z"/><path d="M15 9h.01"/></svg></div>
+            <h3>From idea to launch</h3>
+            <p>Design, development, testing, servers and store releases, with automatic builds and deployments so updates ship safely and quickly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="apps">
+      <div class="wrap">
+        <h2>Our apps</h2>
+        <p class="intro">Products we design and build ourselves.</p>
+        <article class="app">
+          <div class="art"><img src="assets/mooncycle.png" alt="MoonCycle logo: a crescent moon around a couple"></div>
+          <div>
+            <h3>MoonCycle</h3>
+            <p>Period and cycle tracking that keeps what you log on your own phone, with an optional partner side that helps couples understand and support each other, only ever sharing what she chooses.</p>
+            <ul class="tags">
+              <li>Android</li><li>iOS</li><li>Web</li><li>Privacy first</li>
+            </ul>
+            <p class="status">Coming soon to the App Store and Google Play · <a href="https://mooncycle.fit">mooncycle.fit</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap two">
+        <div>
+          <h2>About IONCODEX</h2>
+          <p>IONCODEX LTD is a software development company registered in England and Wales in 2025. We are a small, independent studio focused on mobile apps for Android and iOS.</p>
+          <p>We care about building software that respects the people who use it: clear about what it does, careful with personal information, and simple to use.</p>
+        </div>
+        <div id="contact" class="contact-card">
+          <h2 style="margin-top:0">Contact</h2>
+          <p>Questions, ideas or partnerships, we'd love to hear from you.</p>
+          <a class="mail" href="mailto:contact@ioncodex.org?subject=Hello%20IONCODEX">contact@ioncodex.org</a>
+          <address>
+            IONCODEX LTD<br>
+            127 Calshot Road<br>
+            Birmingham, B42 2BZ<br>
+            United Kingdom
+          </address>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> IONCODEX LTD · Registered in England and Wales · Company number 16798601 · Registered office: 127 Calshot Road, Birmingham, B42 2BZ</span>
+      <span><a href="privacy.html">Privacy</a></span>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
