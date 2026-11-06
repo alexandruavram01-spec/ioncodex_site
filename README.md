@@ -10,7 +10,8 @@ Pages from the `main` branch of this repository.
 | `index.html` | The home page: what we do, our apps, about, contact. Styles are at the top of the file. |
 | `privacy.html` | The privacy notice for the website. |
 | `favicon.svg` | The browser-tab icon, the same orbit mark as in the header. |
-| `assets/` | Images: each app's icon (`mooncycle-icon.jpg`, `autoshot-icon.png`), copied from the app projects. |
+| `assets/` | Images copied from the app projects: each app's icon, and three MoonCycle screenshots from mooncycle.fit (`mooncycle-today.jpg`, `mooncycle-chat.jpg`, `mooncycle-partner.jpg`). |
+| `robots.txt`, `sitemap.xml` | For search engines. When a page changes, update its `<lastmod>` date in `sitemap.xml`. |
 | `CNAME` | Tells GitHub Pages to serve the site on `ioncodex.org`. Don't delete it. |
 | `.nojekyll` | Tells GitHub Pages to publish the files as they are, without running Jekyll. |
 

@@ -3,10 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IONCODEX · Android and iOS apps</title>
-  <meta name="description" content="IONCODEX LTD is a UK software studio designing and building Android and iOS apps, with privacy built in.">
+  <title>IONCODEX LTD · Independent software studio, UK</title>
+  <meta name="description" content="IONCODEX LTD is an independent UK software studio building mobile apps, web platforms and AI-powered tools, including MoonCycle and AutoShot.">
+  <link rel="canonical" href="https://ioncodex.org/">
   <meta name="theme-color" content="#0f1224">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="IONCODEX">
+  <meta property="og:title" content="IONCODEX LTD · Independent software studio, UK">
+  <meta property="og:description" content="Small studio. Big ideas. We build mobile apps, web platforms and AI-powered tools, including MoonCycle and AutoShot.">
+  <meta property="og:url" content="https://ioncodex.org/">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IONCODEX",
+    "legalName": "IONCODEX LTD",
+    "description": "Independent software studio in the United Kingdom.",
+    "url": "https://ioncodex.org/",
+    "email": "contact@ioncodex.org",
+    "foundingDate": "2025-10-21",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "127 Calshot Road",
+      "addressLocality": "Birmingham",
+      "postalCode": "B42 2BZ",
+      "addressCountry": "GB"
+    },
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House company number",
+      "value": "16798601"
+    },
+    "brand": [
+      { "@type": "Brand", "name": "MoonCycle", "url": "https://mooncycle.fit/" },
+      { "@type": "Brand", "name": "AutoShot", "url": "https://autoshot.pro/" }
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg: #f7f7fb;
@@ -68,7 +104,7 @@
     .eyebrow { color: var(--hero-muted); letter-spacing: 2px; text-transform: uppercase; font-size: 13px; font-weight: 600; margin: 0 0 14px; }
     .hero h1 { font-size: clamp(34px, 6vw, 58px); line-height: 1.08; margin: 0 0 18px; max-width: 820px; letter-spacing: -0.5px; }
     .hero h1 span { background: linear-gradient(90deg, #a5a1ff, #5eead4); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero p.lead { color: var(--hero-muted); font-size: 19px; max-width: 640px; margin: 0 0 32px; }
+    .hero p.lead { color: var(--hero-muted); font-size: 19px; max-width: 660px; margin: 0 0 32px; }
     .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
     .btn { display: inline-block; padding: 13px 22px; border-radius: 12px; font-weight: 600; text-decoration: none; font-size: 16px; }
     .btn.primary { background: #ffffff; color: #14162b; }
@@ -78,7 +114,7 @@
     /* Sections */
     section { padding: 80px 0; }
     section h2 { font-size: clamp(26px, 4vw, 36px); margin: 0 0 10px; letter-spacing: -0.3px; }
-    section p.intro { color: var(--muted); max-width: 640px; margin: 0 0 36px; }
+    section p.intro { color: var(--muted); max-width: 660px; margin: 0 0 36px; }
     .grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
     @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
     .card {
@@ -97,30 +133,40 @@
     }
     .icon svg { width: 22px; height: 22px; }
 
-    /* App showcase */
-    .apps { display: grid; gap: 18px; }
-    .app {
-      display: grid; grid-template-columns: 148px 1fr; gap: 30px; align-items: center;
-      background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 30px;
-    }
-    @media (max-width: 720px) { .app { grid-template-columns: 1fr; gap: 18px; padding: 24px; } }
-    .app .art {
-      width: 148px; aspect-ratio: 1 / 1; border-radius: 22%; overflow: hidden;
-      box-shadow: 0 10px 28px rgba(15, 18, 36, 0.18);
-    }
-    @media (max-width: 720px) { .app .art { width: 96px; } }
-    .app .art img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .app h3 { font-size: 26px; margin: 0 0 6px; }
-    .app.mooncycle h3 { font-family: Georgia, "Times New Roman", serif; color: #c2486a; }
-    .app.autoshot h3 { color: #2a7656; }
+    /* Products */
+    .products { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+    .product { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 32px; }
+    @media (max-width: 720px) { .product { padding: 22px; } }
+    .product-head { display: flex; align-items: center; gap: 18px; margin: 0 0 22px; }
+    .app-icon { flex: none; width: 76px; height: 76px; border-radius: 22%; box-shadow: 0 10px 26px rgba(15, 18, 36, 0.2); }
+    .product h3 { font-size: 28px; line-height: 1.15; margin: 0; }
+    .product .tagline { margin: 4px 0 0; font-size: 18px; font-weight: 600; color: var(--ink); }
+    .product.mooncycle h3 { font-family: Georgia, "Times New Roman", serif; color: #c2486a; }
+    .product.autoshot h3 { color: #2a7656; }
     @media (prefers-color-scheme: dark) {
-      .app.mooncycle h3 { color: #f2b8c6; }
-      .app.autoshot h3 { color: #5cc093; }
+      .product.mooncycle h3 { color: #f2b8c6; }
+      .product.autoshot h3 { color: #5cc093; }
     }
-    .app p { color: var(--muted); margin: 0 0 14px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; padding: 0; list-style: none; }
+    .product-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px; align-items: center; }
+    @media (max-width: 860px) { .product-body { grid-template-columns: minmax(0, 1fr); gap: 26px; } }
+    .product-text p { color: var(--muted); margin: 0 0 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; padding: 0; list-style: none; }
     .tags li { font-size: 13px; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
-    .status { font-size: 14px; color: var(--muted); }
+    .product-text p.status { font-size: 14px; }
+    .more { font-weight: 600; text-decoration: none; }
+    .more:hover, .path a:hover { text-decoration: underline; }
+    .shots { display: flex; justify-content: center; align-items: flex-end; gap: 14px; }
+    .shots img {
+      width: calc((100% - 28px) / 3); max-width: 172px; height: auto;
+      border-radius: 18px; border: 1px solid var(--line);
+      box-shadow: 0 14px 30px rgba(60, 30, 90, 0.22);
+    }
+    .shots img:nth-child(2) { margin-bottom: 22px; }
+    .paths { display: grid; gap: 14px; }
+    .path { display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+    .path h4 { margin: 0 0 6px; font-size: 17px; }
+    .path p { flex: 1; margin: 0 0 14px; font-size: 15px; color: var(--muted); }
+    .path a { font-weight: 600; text-decoration: none; }
 
     /* About + contact */
     .two { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
@@ -148,8 +194,8 @@
         IONCODEX
       </a>
       <nav class="links" aria-label="Main">
+        <a href="#products">Products</a>
         <a href="#work" class="hide-sm">What we do</a>
-        <a href="#apps">Apps</a>
         <a href="#about" class="hide-sm">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -159,67 +205,100 @@
   <main id="top">
     <div class="hero">
       <div class="wrap">
-        <p class="eyebrow">Software studio · United Kingdom</p>
-        <h1>We build thoughtful apps for <span>Android and iOS</span>.</h1>
-        <p class="lead">IONCODEX designs, builds and publishes mobile apps that people enjoy using every day, with their privacy built in from the first line of code.</p>
+        <p class="eyebrow">Independent software studio · United Kingdom</p>
+        <h1>Small studio. Big ideas. <span>Software that matters.</span></h1>
+        <p class="lead">We're IONCODEX, an independent UK software studio building mobile apps, web platforms and AI-powered tools. From the first idea to the final release, we create products that make everyday life and work a little easier.</p>
         <div class="buttons">
-          <a class="btn primary" href="#contact">Get in touch</a>
-          <a class="btn ghost" href="#apps">See our apps</a>
+          <a class="btn primary" href="#products">Explore our products</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
         </div>
       </div>
     </div>
 
-    <section id="work">
+    <section id="products">
       <div class="wrap">
-        <h2>What we do</h2>
-        <p class="intro">From the first sketch to the App Store and Google Play, we take care of the whole journey.</p>
-        <div class="grid">
-          <article class="card">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
-            <h3>Apps for phones and the web</h3>
-            <p>One codebase built with Flutter for Android, iOS and the browser, so an app feels at home everywhere and new features reach everyone at the same time.</p>
+        <h2>Our products</h2>
+        <p class="intro">We build software around real needs, not just technology. Different products, different challenges, one approach: practical technology, thoughtful design and reliable engineering.</p>
+
+        <div class="products">
+          <article class="product mooncycle">
+            <div class="product-head">
+              <img class="app-icon" src="assets/mooncycle-icon.jpg" alt="MoonCycle app icon" width="76" height="76">
+              <div>
+                <h3>MoonCycle</h3>
+                <p class="tagline">Understand your cycle. Connect with your partner.</p>
+              </div>
+            </div>
+            <div class="product-body">
+              <div class="product-text">
+                <p>Track your period, symptoms, mood, energy and sleep, recognise your patterns, and ask everyday questions in an optional AI chat. If you like, your partner gets a space of their own with daily tips. You choose exactly what they see, and your detailed log stays on your phone.</p>
+                <ul class="tags">
+                  <li>Android</li><li>iOS</li><li>English · Română</li><li>Privacy first</li>
+                </ul>
+                <p class="status">Coming soon to the App Store and Google Play.</p>
+                <a class="more" href="https://mooncycle.fit">Explore MoonCycle →</a>
+              </div>
+              <div class="shots">
+                <img src="assets/mooncycle-today.jpg" alt="MoonCycle's Today screen: the cycle ring and the phase of the day" width="236" height="460" loading="lazy">
+                <img src="assets/mooncycle-chat.jpg" alt="MoonCycle's optional AI chat answering a question about the first day of a period" width="236" height="460" loading="lazy">
+                <img src="assets/mooncycle-partner.jpg" alt="MoonCycle's Partner screen, where sharing with a partner is turned on or off" width="236" height="460" loading="lazy">
+              </div>
+            </div>
           </article>
-          <article class="card">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
-            <h3>Privacy by design</h3>
-            <p>Personal data stays on the user's device wherever possible, and anything shared is kept to the minimum, in line with UK GDPR.</p>
-          </article>
-          <article class="card">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l6-6"/><path d="M14 4l6 6-8 8-6-6z"/><path d="M15 9h.01"/></svg></div>
-            <h3>From idea to launch</h3>
-            <p>Design, development, testing, servers and store releases, with automatic builds and deployments so updates ship safely and quickly.</p>
+
+          <article class="product autoshot">
+            <div class="product-head">
+              <img class="app-icon" src="assets/autoshot-icon.png" alt="AutoShot app icon" width="76" height="76">
+              <div>
+                <h3>AutoShot</h3>
+                <p class="tagline">Better car photos. Easier car sales.</p>
+              </div>
+            </div>
+            <div class="product-body">
+              <div class="product-text">
+                <p>Selling your own car or running a dealership? Take the photos with your phone, and AutoShot cuts the car out, relights it, adds a floor shadow and places it in a showroom, with the number plates blurred if you like. Then download a Listing Kit sized for Autovit, OLX, Facebook Marketplace or Auto Trader.</p>
+                <ul class="tags">
+                  <li>Web</li><li>English · Română</li><li>iPhone and Android to follow</li>
+                </ul>
+                <p class="status">In a private pilot, free to try by invitation · <a href="https://autoshot.pro">autoshot.pro</a></p>
+              </div>
+              <div class="paths">
+                <div class="path">
+                  <h4>Selling your own car</h4>
+                  <p>Showroom photos of your car, in minutes. Pay only for the photos you make: top-ups from €5, with no subscription.</p>
+                  <a href="mailto:contact@ioncodex.org?subject=AutoShot%20pilot%20access">Ask for an invitation →</a>
+                </div>
+                <div class="path">
+                  <h4>For dealerships</h4>
+                  <p>A studio for every car on your lot, with your logo, your showrooms and your team, each with their own sign-in and role. On the roadmap: VIN details, sales tracking and publishing straight to marketplaces.</p>
+                  <a href="mailto:contact@ioncodex.org?subject=AutoShot%20for%20dealerships">Talk to us about your dealership →</a>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="apps">
+    <section id="work">
       <div class="wrap">
-        <h2>Our apps</h2>
-        <p class="intro">Products we design and build ourselves.</p>
-        <div class="apps">
-          <article class="app mooncycle">
-            <div class="art"><img src="assets/mooncycle-icon.jpg" alt="MoonCycle app icon: a crescent moon around a couple" width="148" height="148" loading="lazy"></div>
-            <div>
-              <h3>MoonCycle</h3>
-              <p>Track your period, symptoms, mood, energy and sleep, see your estimated dates and patterns, and ask everyday questions in an optional AI chat. If you like, your partner gets a space of their own with daily tips: you choose exactly what they see, and your detailed log stays on your phone.</p>
-              <ul class="tags">
-                <li>Android</li><li>iOS</li><li>English · Română</li><li>Privacy first</li>
-              </ul>
-              <p class="status">Coming soon to the App Store and Google Play · <a href="https://mooncycle.fit">mooncycle.fit</a></p>
-            </div>
+        <h2>What we do</h2>
+        <p class="intro">The strengths behind our own products, and behind everything we build.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+            <h3>Product development</h3>
+            <p>From mobile apps to web platforms, we turn ideas into clear, simple products designed for real people and real problems. One shared codebase keeps them consistent on Android, iOS and the web.</p>
           </article>
-
-          <article class="app autoshot">
-            <div class="art"><img src="assets/autoshot-icon.png" alt="AutoShot app icon: a car in a camera shutter" width="148" height="148" loading="lazy"></div>
-            <div>
-              <h3>AutoShot</h3>
-              <p>Showroom photos for car dealers. Upload the photos of a car and AutoShot cuts it out, relights it, adds a floor shadow and places it in a showroom with your logo, ready for your listings. Number plates can be blurred in the same step.</p>
-              <ul class="tags">
-                <li>Web</li><li>English · Română</li><li>For car dealers</li>
-              </ul>
-              <p class="status">In a private pilot, <a href="#contact">ask us for an invitation</a> · <a href="https://autoshot.pro">autoshot.pro</a> · iPhone and Android apps to follow</p>
-            </div>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div>
+            <h3>Practical AI</h3>
+            <p>We use AI where it adds real value, like answering everyday questions in MoonCycle or turning a phone photo into a showroom image in AutoShot. Never as a gimmick.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>Engineering built to last</h3>
+            <p>Cloud infrastructure, automated releases, security, privacy and monitoring aren't afterthoughts. They're part of how we build from day one, so our products stay reliable and personal data stays protected.</p>
           </article>
         </div>
       </div>
@@ -228,13 +307,13 @@
     <section id="about">
       <div class="wrap two">
         <div>
-          <h2>About IONCODEX</h2>
-          <p>IONCODEX LTD is a software development company registered in England and Wales in 2025. We are a small, independent studio focused on mobile apps for Android and iOS.</p>
-          <p>We care about building software that respects the people who use it: clear about what it does, careful with personal information, and simple to use.</p>
+          <h2>Built by people who care about what they ship</h2>
+          <p>IONCODEX LTD is an independent software studio in the United Kingdom, registered in England and Wales in 2025. We bring together experience in software engineering, cloud infrastructure and product development to build apps we're proud to put our name on.</p>
+          <p>We're hands-on at every stage, from the first prototype to running the servers long after launch. And we treat personal information with care: we say clearly what our apps do with it, and collect no more than they need.</p>
         </div>
         <div id="contact" class="contact-card">
-          <h2 style="margin-top:0">Contact</h2>
-          <p>Questions, ideas or partnerships, we'd love to hear from you.</p>
+          <h2 style="margin-top:0">Have an idea? Let's talk.</h2>
+          <p>Whether you'd like to collaborate, explore a partnership or discuss a new software product, we'd love to hear from you.</p>
           <a class="mail" href="mailto:contact@ioncodex.org?subject=Hello%20IONCODEX">contact@ioncodex.org</a>
           <address>
             IONCODEX LTD<br>
