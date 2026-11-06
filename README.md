@@ -10,7 +10,7 @@ Pages from the `main` branch of this repository.
 | `index.html` | The home page: what we do, our apps, about, contact. Styles are at the top of the file. |
 | `privacy.html` | The privacy notice for the website. |
 | `favicon.svg` | The browser-tab icon, the same orbit mark as in the header. |
-| `assets/` | Images. `mooncycle.png` is the MoonCycle artwork. |
+| `assets/` | Images: each app's icon (`mooncycle-icon.jpg`, `autoshot-icon.png`), copied from the app projects. |
 | `CNAME` | Tells GitHub Pages to serve the site on `ioncodex.org`. Don't delete it. |
 | `.nojekyll` | Tells GitHub Pages to publish the files as they are, without running Jekyll. |
 
@@ -43,8 +43,10 @@ Rules worth keeping:
 - The company details in the footer (name, number, place of registration, registered
   office) are required by UK law on a company website. If the registered office moves,
   update both pages.
-- To add an app, copy the `<article class="app">` block in `index.html` and add its
-  artwork to `assets/`.
+- To add an app, copy one `<article class="app …">` block inside `<div class="apps">` in
+  `index.html`, put its square icon in `assets/`, and give its name a colour with a
+  `.app.<name> h3` rule in the styles. Check each claim against the app's own website
+  and project first: features, platforms, languages, and whether it is in the stores yet.
 
 ## Publishing for the first time
 

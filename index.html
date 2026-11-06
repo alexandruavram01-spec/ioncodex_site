@@ -98,18 +98,25 @@
     .icon svg { width: 22px; height: 22px; }
 
     /* App showcase */
+    .apps { display: grid; gap: 18px; }
     .app {
-      display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center;
-      background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 32px;
+      display: grid; grid-template-columns: 148px 1fr; gap: 30px; align-items: center;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 30px;
     }
-    @media (max-width: 720px) { .app { grid-template-columns: 1fr; text-align: left; } }
+    @media (max-width: 720px) { .app { grid-template-columns: 1fr; gap: 18px; padding: 24px; } }
     .app .art {
-      background: #fff7f2; border-radius: 28px; aspect-ratio: 1 / 1;
-      display: grid; place-items: center; padding: 18px;
+      width: 148px; aspect-ratio: 1 / 1; border-radius: 22%; overflow: hidden;
+      box-shadow: 0 10px 28px rgba(15, 18, 36, 0.18);
     }
-    .app .art img { width: 100%; height: auto; }
-    .app h3 { font-size: 26px; margin: 0 0 6px; font-family: Georgia, "Times New Roman", serif; color: #c2486a; }
-    @media (prefers-color-scheme: dark) { .app h3 { color: #f2b8c6; } }
+    @media (max-width: 720px) { .app .art { width: 96px; } }
+    .app .art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .app h3 { font-size: 26px; margin: 0 0 6px; }
+    .app.mooncycle h3 { font-family: Georgia, "Times New Roman", serif; color: #c2486a; }
+    .app.autoshot h3 { color: #2a7656; }
+    @media (prefers-color-scheme: dark) {
+      .app.mooncycle h3 { color: #f2b8c6; }
+      .app.autoshot h3 { color: #5cc093; }
+    }
     .app p { color: var(--muted); margin: 0 0 14px; }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; padding: 0; list-style: none; }
     .tags li { font-size: 13px; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
@@ -169,8 +176,8 @@
         <div class="grid">
           <article class="card">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
-            <h3>Android and iOS apps</h3>
-            <p>One codebase built with Flutter, so your app looks and feels at home on both platforms, and new features reach everyone at the same time.</p>
+            <h3>Apps for phones and the web</h3>
+            <p>One codebase built with Flutter for Android, iOS and the browser, so an app feels at home everywhere and new features reach everyone at the same time.</p>
           </article>
           <article class="card">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
@@ -190,17 +197,31 @@
       <div class="wrap">
         <h2>Our apps</h2>
         <p class="intro">Products we design and build ourselves.</p>
-        <article class="app">
-          <div class="art"><img src="assets/mooncycle.png" alt="MoonCycle logo: a crescent moon around a couple"></div>
-          <div>
-            <h3>MoonCycle</h3>
-            <p>Period and cycle tracking that keeps what you log on your own phone, with an optional partner side that helps couples understand and support each other, only ever sharing what she chooses.</p>
-            <ul class="tags">
-              <li>Android</li><li>iOS</li><li>Web</li><li>Privacy first</li>
-            </ul>
-            <p class="status">Coming soon to the App Store and Google Play · <a href="https://mooncycle.fit">mooncycle.fit</a></p>
-          </div>
-        </article>
+        <div class="apps">
+          <article class="app mooncycle">
+            <div class="art"><img src="assets/mooncycle-icon.jpg" alt="MoonCycle app icon: a crescent moon around a couple" width="148" height="148" loading="lazy"></div>
+            <div>
+              <h3>MoonCycle</h3>
+              <p>Track your period, symptoms, mood, energy and sleep, see your estimated dates and patterns, and ask everyday questions in an optional AI chat. If you like, your partner gets a space of their own with daily tips: you choose exactly what they see, and your detailed log stays on your phone.</p>
+              <ul class="tags">
+                <li>Android</li><li>iOS</li><li>English · Română</li><li>Privacy first</li>
+              </ul>
+              <p class="status">Coming soon to the App Store and Google Play · <a href="https://mooncycle.fit">mooncycle.fit</a></p>
+            </div>
+          </article>
+
+          <article class="app autoshot">
+            <div class="art"><img src="assets/autoshot-icon.png" alt="AutoShot app icon: a car in a camera shutter" width="148" height="148" loading="lazy"></div>
+            <div>
+              <h3>AutoShot</h3>
+              <p>Showroom photos for car dealers. Upload the photos of a car and AutoShot cuts it out, relights it, adds a floor shadow and places it in a showroom with your logo, ready for your listings. Number plates can be blurred in the same step.</p>
+              <ul class="tags">
+                <li>Web</li><li>English · Română</li><li>For car dealers</li>
+              </ul>
+              <p class="status">In a private pilot, <a href="#contact">ask us for an invitation</a> · <a href="https://autoshot.pro">autoshot.pro</a> · iPhone and Android apps to follow</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
