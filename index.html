@@ -90,7 +90,8 @@
     .brand svg { width: 30px; height: 30px; }
     nav.links a { color: #d6d8f3; text-decoration: none; margin-left: 22px; font-size: 15px; }
     nav.links a:hover { color: #fff; }
-    @media (max-width: 560px) { nav.links a { margin-left: 14px; font-size: 14px; } nav.links a.hide-sm { display: none; } }
+    @media (max-width: 720px) { nav.links a.hide-sm { display: none; } }
+    @media (max-width: 560px) { nav.links a { margin-left: 14px; font-size: 14px; } }
 
     /* Hero */
     .hero {
@@ -168,6 +169,18 @@
     .path p { flex: 1; margin: 0 0 14px; font-size: 15px; color: var(--muted); }
     .path a { font-weight: 600; text-decoration: none; }
 
+    /* Work with us */
+    section.alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .work { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; align-items: start; }
+    @media (max-width: 860px) { .work { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
+    .work p { color: var(--muted); margin: 0 0 16px; }
+    .work .btn { margin-top: 6px; }
+    .btn.solid { background: var(--ink); color: var(--bg); }
+    .offer { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .offer li { padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--bg); }
+    .offer strong { display: block; font-size: 17px; margin-bottom: 4px; }
+    .offer span { color: var(--muted); font-size: 15px; }
+
     /* About + contact */
     .two { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
     @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
@@ -196,6 +209,7 @@
       <nav class="links" aria-label="Main">
         <a href="#products">Products</a>
         <a href="#work" class="hide-sm">What we do</a>
+        <a href="#work-with-us" class="hide-sm">Work with us</a>
         <a href="#about" class="hide-sm">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -226,7 +240,7 @@
               <img class="app-icon" src="assets/mooncycle-icon.jpg" alt="MoonCycle app icon" width="76" height="76">
               <div>
                 <h3>MoonCycle</h3>
-                <p class="tagline">Understand your cycle. Connect with your partner.</p>
+                <p class="tagline">Your cycle. Your story. Better understood.</p>
               </div>
             </div>
             <div class="product-body">
@@ -301,6 +315,22 @@
             <p>Cloud infrastructure, automated releases, security, privacy and monitoring aren't afterthoughts. They're part of how we build from day one, so our products stay reliable and personal data stays protected.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section id="work-with-us" class="alt">
+      <div class="wrap work">
+        <div>
+          <h2>Work with us</h2>
+          <p>Our own products come first, but we also take on a small number of client projects, built with the same tools and the same care as MoonCycle and AutoShot.</p>
+          <p>Tell us what you'd like to build, who it's for and your rough timeline. We'll reply and tell you honestly whether we're a good fit.</p>
+          <a class="btn solid" href="mailto:contact@ioncodex.org?subject=Project%20enquiry">Tell us about your project</a>
+        </div>
+        <ul class="offer">
+          <li><strong>Mobile and web apps</strong><span>Android, iOS and web apps from one Flutter codebase, from the first prototype to release on the App Store and Google Play.</span></li>
+          <li><strong>Back ends and cloud</strong><span>APIs, databases, sign-in and payments, with secure hosting, automated deployments, backups and monitoring.</span></li>
+          <li><strong>AI features</strong><span>Practical AI built into your product, such as answers drawn from your own content or automatic image processing, with privacy considered from the start.</span></li>
+        </ul>
       </div>
     </section>
 
